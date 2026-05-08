@@ -37,8 +37,17 @@ print ("Fight")
 time.sleep(1)
 print ("Mizu ataca primeiro")
 time.sleep(3)
-("Redemoinho aquático!")
-print ("Ataque 2, água do inferno!")
-
-print (input("Escolha o ataque!: "))
-print ("Com o ataque de Mizu,o ataque aquático onde ela ronda o adversário com água o jogando para cima e soltando, Ercahaya perde 50 HPs")
+print("Escolha o ataque: Soco, Chute, whirlpool, Hell Water")
+ataque = input()
+if ataque == "soco":
+    print("Você deu um soco no adversário!")
+elif ataque == "chute":
+    print("Você deu um chute no adversário!")
+elif ataque == "whirlpool":
+    print("Você acertou o adversário com magia!")
+elif ataque == "Hell Water":
+    print("Você acertou o adversário com magia!")
+else:
+    print("Ataque Inválido!")
+time.sleep(2)
+print ("O ataque removeu 300 HPs do adversário!")
