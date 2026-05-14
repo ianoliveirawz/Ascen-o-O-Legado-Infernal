@@ -19,9 +19,18 @@ print ("E Ercahaya uma ser de luz poderosa")
 time.sleep(5)
 print ("Nesse jogo você poderá selecionar um personagem dentre os indicados!")
 time.sleep(5)
-print ("Maxwell - 9000 pontos de vida(HP)")
-print ("Elementais - 8500 pontos de vida(HP)")
-print ("Ercahaya - 8000 pontos de vida(HP)")
+vida_maxwell = 7500
+vida_mizu = 6000
+vida_smoke = 6000
+vida_earth = 6000
+vida_mac = 6000
+vida_ercahaya = 5000
+print (f"Maxwell - {vida_maxwell} pontos de vida(HP)")
+print (f"Mizu - {vida_mizu} pontos de vida(HP)")
+print (f"Smoke - {vida_earth} pontos de vida(HP)")
+print (f"Earth - {vida_smoke} pontos de vida(HP)")
+print (f"Mac - {vida_mac} pontos de vida(HP)")
+print (f"Ercahaya - {vida_ercahaya} pontos de vida(HP)")
 time.sleep(5)
 print ("Com seu personagem selecionado, a luta começa!!!")
 time.sleep(5)
@@ -37,17 +46,53 @@ print ("Fight")
 time.sleep(1)
 print ("Mizu ataca primeiro")
 time.sleep(3)
-print("Escolha o ataque: Soco, Chute, whirlpool, Hell Water")
-ataque = input()
-if ataque == "soco":
+while vida_maxwell > 0 and vida_mizu > 0 and vida_ercahaya > 0 and vida_mac > 0 and vida_earth > 0 and vida_smoke > 0:
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("Escolha o ataque de Mizu: 1 - Soco, 2 - Chute, 3 - whirlpool, 4 - Hell Water")
+    ataque = input()
+    if ataque == "1":
+        dano = 200
+        print("Você deu um soco no adversário!")
+    elif ataque == "2":
+        dano = 300
+        print("Você deu um chute no adversário!")
+    elif ataque == "3":
+        dano = 450
+        print("Você acertou o adversário com magia!")
+    elif ataque == "4":
+        dano = 500
+        print("Você acertou o adversário com magia!")
+    else:
+        print("Ataque Inválido!")
+    time.sleep(2)
+    vida_ercahaya = vida_ercahaya - dano
+    print (f"O ataque removeu {dano} HPs do adversário!")
+print()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print("Escolha o ataque de Ercahaya: 1 - Soco, 2 - Chute, 3 - Blindness, 4 - Manipulation :")
+ataque= input()
+if ataque == "1":
+    dano = 250
     print("Você deu um soco no adversário!")
-elif ataque == "chute":
-    print("Você deu um chute no adversário!")
-elif ataque == "whirlpool":
-    print("Você acertou o adversário com magia!")
-elif ataque == "Hell Water":
-    print("Você acertou o adversário com magia!")
+elif ataque == "2":
+        dano = 300
+        print("Você deu um chute no adversário!")
+elif ataque == "3":
+        dano = 450
+        print("Você acertou o adversário com magia!")
+elif ataque == "4":
+        dano = 500
+        print("Você acertou o adversário com magia!")
 else:
-    print("Ataque Inválido!")
-time.sleep(2)
-print ("O ataque removeu 300 HPs do adversário!")
+        print("Ataque Inválido!")
+        time.sleep(2)
+        vida_mizu = vida_mizu - dano
+        print (f"O ataque removeu {dano} HPs do adversário!")
+if vida_mizu <= 0:
+     print("~~~~~~~~~~~~~~~~~~~")
+     print("----Mizu winner----")
+     print("~~~~~~~~~~~~~~~~~~~")
+elif vida_ercahaya <= 0:
+     print("~~~~~~~~~~~~~~~~~~~~~~~")
+     print("----Ercahaya winner----")
+     print("~~~~~~~~~~~~~~~~~~~~~~~")
